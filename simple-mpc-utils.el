@@ -87,6 +87,12 @@ output as a string."
      (delete-char -1)  ;; delete trailing \n
      (buffer-string))))
 
+(defun simple-mpc-status ()
+  "Return mpc status."
+  (with-temp-buffer
+    (simple-mpc-call-mpc t "status")
+    (buffer-string)))
+
 (defun simple-mpc-current-artist-and-song ()
   "Return the currently playing artist and song."
   (with-temp-buffer
