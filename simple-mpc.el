@@ -116,6 +116,12 @@
   (simple-mpc-call-mpc nil "repeat")
   (message "%s" (simple-mpc-repeat-status)))
 
+(defun simple-mpc-toggle-single ()
+  "Toggle single mode."
+  (interactive)
+  (simple-mpc-call-mpc nil "single")
+  (message "%s" (simple-mpc-single-status)))
+
 (defun simple-mpc-shuffle-current-playlist ()
   "Shuffle the current playlist."
   (interactive)
@@ -158,6 +164,7 @@ IGNORE-AUTO and NOCONFIRM are passed by `revert-buffer'."
               "      * increase [V]olume\n"
               "      * decrease [v]olume\n"
               "      * toggle [r]epeat mode\n"
+              "      * toggle [s]ingle mode\n"
               (propertize "\n   * playlist\n" 'face 'simple-mpc-main-headers)
               "      * view [c]urrent playlist\n"
               "      * [C]lear current playlist\n"

@@ -118,6 +118,14 @@ output as a string."
     (mark-word 2)
     (buffer-substring (mark) (point))))
 
+(defun simple-mpc-single-status ()
+  "Return single status."
+  (with-temp-buffer
+    (simple-mpc-call-mpc t "status")
+    (search-backward "single")
+    (mark-word 2)
+    (buffer-substring (mark) (point))))
+
 (defun simple-mpc-song-position ()
   "Return song position."
   (with-temp-buffer
