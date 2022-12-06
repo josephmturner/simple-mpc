@@ -147,6 +147,8 @@ IGNORE-AUTO and NOCONFIRM are passed by `revert-buffer'."
       (erase-buffer)
       (insert (propertize "* simple-mpc *\n\n"
                           'face 'simple-mpc-main-name)
+              (simple-mpc-status)
+              "\n"
               (propertize "   * controls\n" 'face 'simple-mpc-main-headers)
               "      * [t]oggle\n"
               "      * [n]ext track\n"
